@@ -6,14 +6,16 @@ from ingest import load_and_chunk_documents
 COLLECTION_NAME = "professor_reviews"
 TOP_K = 5
 
+# Load once at import time so every retrieve() call reuses the same model
+_model = SentenceTransformer("all-MiniLM-L6-v2")
+
 
 def build_vector_store(docs_dir: str = "documents") -> chromadb.Collection:
     """Embed all chunks and load them into a local ChromaDB collection."""
     chunks = load_and_chunk_documents(docs_dir)
 
-    model = SentenceTransformer("all-MiniLM-L6-v2")
     texts = [c["text"] for c in chunks]
-    embeddings = model.encode(texts, show_progress_bar=True).tolist()
+    embeddings = _model.encode(texts, show_progress_bar=True).tolist()
 
     client = chromadb.PersistentClient(path="chroma_db")
 
@@ -43,8 +45,7 @@ def get_collection() -> chromadb.Collection:
 
 def retrieve(query: str, collection: chromadb.Collection, k: int = TOP_K) -> list[dict]:
     """Return the top-k most relevant chunks for a query with source and distance."""
-    model = SentenceTransformer("all-MiniLM-L6-v2")
-    query_embedding = model.encode([query]).tolist()
+    query_embedding = _model.encode([query]).tolist()
 
     results = collection.query(
         query_embeddings=query_embedding,
