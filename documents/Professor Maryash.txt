@@ -1,0 +1,21 @@
+Professor: Gennadiy Maryash
+Course: CSCI 135 - Software Analysis and Design 1
+Rating: 3.3/5
+
+"His syllabus grading outline is unclear. He is not a bad lecturer and his UTAs are helpful. Do all your labs, homework, recitation work (code reviews and quizzes) and projects and you should be fine. Be sure to study for the midterm and final, because if you fail the final you fail the entire course."
+---
+"Although he changed the syllabus a few times during semester, I appreciate the fact that he tried to talk it out with students and made sure we know the material for the exams.Just make sure you read lecture slides before hand and understand the material before you do the labs. Make sure you do all labs, projects, and study for exams 2 weeks in advanced."
+---
+"His lecture slides are really helpful, cause I practically slept through his lectures. I didn't need to read the book cause I skimmed through his lecture slides. Start your projects and lab work early, and REALLY STUDY for midterms and final. Practice old papers and you're good to go."
+---
+"He's a nice guy, but the lectures definitely had little to do with the exams. This is pretty much a teach yourself course. He seems willing to work with you though, and he's not unfair."
+---
+"I mean he is very respectful and polite. But his lectures does not makes sense. If you do not have any experience in C++ then its very very tough as for me. His projects were tough though there were TAs who were there for help but they only give hints and does not look on your programs which means you have to be on your own. Exams were hard. Awful!"
+---
+"I liked the fact that his lecture is based on the textbook. Slides were organized. The textbook used is very clear and simple to read. Perhaps one of the easiest and user friendly programming book I came across. His pop quizzes helps me realize the details in the materials I thought I knew well. The final project was fun."
+---
+"Super underrated professor. His exams are easy since he gives practice ones which reflect what's going to be covered a few days before the exam. There were a few projects for this course, some of which were super demanding. Someone asked him for an extension on the day on which the project was due and he literally gave us another few days to finish"
+---
+"Gennady Maryash is definitely a bad Professor when it comes to learning the foundations of C++. His lectures are utterly boring and makes you want to fall asleep. On the bright side, his exams are not too difficult and the labs and textbook problems are enough material to do well. Essentially, this is a self-study for your grade, which sucks."
+---
+"Everything he does in class can be covered on your own if you read enough. The only things you will miss during lecture are the quizzes. If you participate and he knows who you are, he will likely be more lenient with your grade. Take advantage of the tutoring hours. I would take him again."

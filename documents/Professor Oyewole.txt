@@ -1,0 +1,25 @@
+Professor: Oyewole Oyekoya
+Course: CSCI 235
+Rating: 2.8/5
+
+"He just read the slides and he didn't stop to check that the students understood what he was explaining, so avoid him taking this course with a different professor."
+---
+"He pays too much attention to attendance and participation. You have to be prepared to read outside of class. He is very hands-off with the projects and leaves it to the TAs."
+---
+"By far the worst CS professor I have taken, and I took plenty believe me. He just reads his slides and that's it. He doesn't code, mostly is the TA. Class is a mess, you learn more from YouTube than from his lecture. If you can avoid, take other professor if not just pray final is not mandatory to pass or else its gg. He is heartless."
+---
+"He's pretty lenient at grading and works with the students to meet somewhere in the middle. Quizzes and final are exactly on the material he teaches. The lectures are a bit boring since he basically reads from the textbook, but they teach you what you need to know. You'll have to read the textbook to pass the course. Overall a good choice"
+---
+"An ok instructor. Not the best at explaining concepts, but his slides, which were basically the important parts from the textbook, were good. Tests weren't the best. Most of the semester we focused on data structures, but his final kept nagging on about big O notation. On top of that, wording on the test was awful & he wont clarify if u ask him to"
+---
+"Lectures were organized considering the unexpected transfer to online classes due to COVID 19. If you don't read the subject, you'll struggle and find the materials daunting; I wouldn't blame the professor for this. There is only so much that can be taught in a semester!"
+---
+"Despite doing similarly to my friends in the class, they all got As and I got a grade closer to someone who didn't even submit a project. His test making is awful and his wording is ambiguous. When I emailed him he ghosted me. Gave surprise bonus points that boosted an entire letter grade for those who just happened to attend that day."
+
+Course: Advanced Visual Tools
+
+"Took him for VR and Advanced Vis tools. Graded projects harshly in both and took points off of our presentation because someone's camera stopped working while they were speaking. Really nonsensical to take off points for that when the webcam being on adds nothing to the presentation. It's a pandemic, maybe be more understanding of tech difficulties"
+---
+"He gave us a group project with RANDOM people. That by itself should speak to what you can expect from this class. He graded the group project terribly for Vis (not so much for VR), without any clear and concise grading instructions. And can you please tell me why attendance is mandatory if you make the lectures available to view, make up your mind"
+---
+"If you are prepared to do the work, you will get top grades. The lecture review class was really a practice session for the exam. He hinted the question. The grading criteria for the group project was in the first lecture slides, so attendance and participation matters."

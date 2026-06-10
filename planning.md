@@ -10,6 +10,7 @@
 ## Domain
 
 <!-- What domain did you choose? Why is this knowledge valuable and hard to find through official channels? -->
+My domain was the Hunter College CS Professor Reviews. This knowledge is valuable to students when registering for courses, students pick professors that previous students have rated, it is convinient for Hunter CS students to have all these ratings in one place without having to go to multiple RMP pages.
 
 ---
 
@@ -18,18 +19,18 @@
 <!-- List your specific sources: URLs, subreddit names, forum threads, or file descriptions.
      Aim for at least 10 sources that together cover different subtopics or perspectives within your domain. -->
 
-| # | Source | Description | URL or location |
-|---|--------|-------------|-----------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
-| 10 | | | |
+| # | Source |   Description | URL or location |
+|---|--------|  -------------|-----------------|
+| 1 | RMP    |Mneimneh Rating|https://www.ratemyprofessors.com/professor/926045|
+| 2 | RMP    |Lynch Rating   |https://www.ratemyprofessors.com/professor/2505090|
+| 3 | RMP    |Dietrich Rating|https://www.ratemyprofessors.com/professor/2674099|
+| 4 | RMP    |Eric Rating    |https://www.ratemyprofessors.com/professor/257192|
+| 5 | RMP    |Maryash Rating |https://www.ratemyprofessors.com/professor/1137095|
+| 6 | RMP    |Oyewole Rating |https://www.ratemyprofessors.com/professor/2558461|
+| 7 | RMP    |Shankar Rating |https://www.ratemyprofessors.com/professor/257190|
+| 8 | RMP    |Shostak Rating |https://www.ratemyprofessors.com/professor/1823870|
+| 9 | RMP    |Stamos Rating  |https://www.ratemyprofessors.com/professor/64427|
+| 10| RMP    |Tojeira Rating |https://www.ratemyprofessors.com/professor/1660967|
 
 ---
 
