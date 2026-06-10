@@ -42,11 +42,11 @@ My domain was the Hunter College CS Professor Reviews. This knowledge is valuabl
      A review-heavy corpus warrants different chunking than a long FAQ. -->
 
 **Chunk size:**
-
+One review per chunk (it splits on --- separator), roughly 50-200 characters each
 **Overlap:**
-
+No overlap
 **Reasoning:**
-
+Reviews are short and independent. Each one expresses a complete opinion. Splitting mid-review would lose context.
 ---
 
 ## Retrieval Approach
@@ -58,11 +58,13 @@ My domain was the Hunter College CS Professor Reviews. This knowledge is valuabl
      support, accuracy on domain-specific text, latency? -->
 
 **Embedding model:**
-
+all-MiniLM-L6-v2 via sentence-transformers
 **Top-k:**
-
+5; with short reviews as chunks, retrieving 5 gives the LLM enough opinions to create an answer.
 **Production tradeoff reflection:**
-
+All-MiniLM-L6-v2 is good for local free use but its a small model trained on general text, not specifically on student slang or academic language, so it may be hard for the LLM to understand some of the "non-formal" reviews.
+OpenAI's text-embedding-3-large would give better accuracy but costs money per API call.
+Lastly, MiniLM is English only, this attribute may negatively impact results if reviews are written in other languages.
 ---
 
 ## Evaluation Plan
