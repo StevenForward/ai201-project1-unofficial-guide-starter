@@ -76,11 +76,11 @@ Lastly, MiniLM is English only, this attribute may negatively impact results if 
 
 | # | Question | Expected answer |
 |---|----------|-----------------|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
-| 5 | | |
+| 1 |Which CS professor is the best for discrete math?|Saad Mneimneh|
+| 2 |Which CS professor is the best for CSCI 335?|Ioannis Stamos - highest rated, is helpful during office hours and provides generous curves|
+| 3 |Which professors are the hardest to reach out to?|Professor Lynch, Oyekoya, and Shankar. Multiplie reviews mention no response from them|
+| 4 |Who is better for Computer Architecture 2, Shankar or Shostak?|Shostak is the better pick. He is higher rated, clearer lectures, lets you replace midterm with final.|
+| 5 |Which professor is the worst for CSCI 335?|Dietrich - reviews mention erasing interest in the subject, no useful final review.|
 
 ---
 
@@ -91,9 +91,9 @@ Lastly, MiniLM is English only, this attribute may negatively impact results if 
      retrieval, chunks that split key information across boundaries. -->
 
 1.
-
+One of the anticipated challenges would have to be the contradicting reviews for the professors. It can be hard for my system to come up with a clear answer when there are the same amount of good reviews as bad for a professor. 
 2.
-
+Another challenge present is the fact that some of the reviews in RateMyProfessor can be too short or "informal" meaning they use slang vocabulary in the review. This can present a challenge for the LLM to understand or even create a significant conclusion.
 ---
 
 ## Architecture
@@ -103,6 +103,16 @@ Lastly, MiniLM is English only, this attribute may negatively impact results if 
      Label each stage with the tool or library you're using.
      You can use ASCII art, a Mermaid diagram, or embed a sketch as an image.
      You'll use this diagram as context when prompting AI tools to implement each stage. -->
+     
+```mermaid
+flowchart LR
+     A[📄 Document Ingestion\n10 .txt files\nPython open/read] --> B[✂️ Chunking\nSplit on --- separator\nCustom Python script]
+    B --> C[🔢 Embedding\nall-MiniLM-L6-v2\nsentence-transformers]
+    C --> D[🗄️ Vector Store\nChromaDB\nLocal]
+    D --> E[🔍 Retrieval\nSemantic Search\ntop-k=5]
+    E --> F[💬 Generation\nGroq API\nllama-3.3-70b-versatile]
+    F --> G[🖥️ Interface\nGradio UI]
+```
 
 ---
 
