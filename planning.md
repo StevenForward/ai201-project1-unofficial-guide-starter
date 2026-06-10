@@ -130,8 +130,10 @@ flowchart LR
 
 **Milestone 3 — Ingestion and chunking:**
 I will give Claude my Domain section, Documents table, and Chunking Strategy section from planning.md and ask it to implement a script that loads all .txt files from the /documents folder, splits them on the "---" separator, and returns a list of chunks with the source filename attached as metadata. I will verify the output by printing 5 random chunks and confirming they are readable, self-contained, and correctly labeled with their source file. 
+
 **Milestone 4 — Embedding and retrieval:**
 I'll give Claude the Retrieval Appraoch section and Architecture diagram and ask it to implement,an embedding script using all-MiniLM-L6-v2 via sentence-transformers that stores chunks in ChromaDB with source metadata, and a retrieval function that accepts a query string and returns the top-5 most relevant chunks with their source filenames. I will verify by running 3 of my evaluation plan questions and checking that returned chunks are visibly relevant.
+
 **Milestone 5 — Generation and interface:**
 I will give Claude my grounding requirement (answer only from retrieved context, 
 include source attribution) and ask it to implement a Groq API call using 
