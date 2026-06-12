@@ -49,13 +49,16 @@ The domain of this project are the student reviews of Hunter College Computer Sc
      - What your final chunk count was across all documents -->
 
 **Chunk size:**
-One review per chunk that splits on the --- separator. Reviews range from 50-300 characters each
+<p align="left">One review per chunk that splits on the --- separator. Reviews range from 50-300 characters each</p>
+
 **Overlap:**
-There is no overlap, every review is a complete, independent opinion. There is no meaninful content that spans two reviews. 
+<p align = "left">There is no overlap, every review is a complete, independent opinion. There is no meaninful content that spans two reviews.</p>
+
 **Why these choices fit your documents:**
-These choices fit my documents because each document is a collection of reviews from the RMP website that are separated by dashes. It would be natural to analyzse by each of those chunks.
+<p align = "left">These choices fit my documents because each document is a collection of reviews from the RMP website that are separated by dashes. It would be natural to analyzse by each of those chunks.</p>
+
 **Final chunk count:**
-Ultimately had 85 chunks in total accross the 10 .txt files
+<p align = "left">Ultimately had 85 chunks in total accross the 10 .txt files</p>
 ---
 
 ## Embedding Model
