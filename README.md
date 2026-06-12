@@ -13,7 +13,7 @@ source# The Unofficial Guide — Project 1
      Why is this knowledge valuable, and why is it hard to find through official channels?
      Example: "Student reviews of CS professors at [university] — useful because official
      course descriptions don't reflect teaching style, exam difficulty, or workload." -->
-     The domain of this project are the student reviews of Hunter College Computer Science professors. This is useful because official course catalogs and professor pages only list descriptions and office hours, not teaching style, the difficulty of the exams, the workload, or how responsive a professor is. Students typically have to search through multiple Rate My Professor pages individually to compare professors for the same course. This system brings all that information together in one place, making it easier for Hunter CS students to make informed decisions when registering for their upcoming courses.
+The domain of this project are the student reviews of Hunter College Computer Science professors. This is useful because official course catalogs and professor pages only list descriptions and office hours, not teaching style, the difficulty of the exams, the workload, or how responsive a professor is. Students typically have to search through multiple Rate My Professor pages individually to compare professors for the same course. This system brings all that information together in one place, making it easier for Hunter CS students to make informed decisions when registering for their upcoming courses.
 ---
 
 ## Document Sources
