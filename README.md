@@ -13,7 +13,7 @@ source# The Unofficial Guide — Project 1
      Why is this knowledge valuable, and why is it hard to find through official channels?
      Example: "Student reviews of CS professors at [university] — useful because official
      course descriptions don't reflect teaching style, exam difficulty, or workload." -->
-
+     The domain of this project are the student reviews of Hunter College Computer Science professors. This is useful because official course catalogs and professor pages only list descriptions and office hours, not teaching style, the difficulty of the exams, the workload, or how responsive a professor is. Students typically have to search through multiple Rate My Professor pages individually to compare professors for the same course. This system brings all that information together in one place, making it easier for Hunter CS students to make informed decisions when registering for their upcoming courses.
 ---
 
 ## Document Sources
@@ -22,18 +22,18 @@ source# The Unofficial Guide — Project 1
      Be specific: include URLs, subreddit names, forum thread titles, or file names.
      Aim for variety — sources that together cover different subtopics or perspectives. -->
 
-| # | Source | Type | URL or file path |
-|---|--------|------|-----------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
-| 10 | | | |
+| # | Source |      Type     | URL or location |
+|---|--------|  -------------|-----------------|
+| 1 | RMP    |Mneimneh Rating|https://www.ratemyprofessors.com/professor/926045|
+| 2 | RMP    |Lynch Rating   |https://www.ratemyprofessors.com/professor/2505090|
+| 3 | RMP    |Dietrich Rating|https://www.ratemyprofessors.com/professor/2674099|
+| 4 | RMP    |Eric Rating    |https://www.ratemyprofessors.com/professor/257192|
+| 5 | RMP    |Maryash Rating |https://www.ratemyprofessors.com/professor/1137095|
+| 6 | RMP    |Oyewole Rating |https://www.ratemyprofessors.com/professor/2558461|
+| 7 | RMP    |Shankar Rating |https://www.ratemyprofessors.com/professor/257190|
+| 8 | RMP    |Shostak Rating |https://www.ratemyprofessors.com/professor/1823870|
+| 9 | RMP    |Stamos Rating  |https://www.ratemyprofessors.com/professor/64427|
+| 10| RMP    |Tojeira Rating |https://www.ratemyprofessors.com/professor/1660967|
 
 ---
 
@@ -47,13 +47,13 @@ source# The Unofficial Guide — Project 1
      - What your final chunk count was across all documents -->
 
 **Chunk size:**
-
+One review per chunk that splits on the --- separator. Reviews range from 50-300 characters each
 **Overlap:**
-
+There is no overlap, every review is a complete, independent opinion. There is no meaninful content that spans two reviews. 
 **Why these choices fit your documents:**
-
+These choices fit my documents because each document is a collection of reviews from the RMP website that are separated by dashes. It would be natural to analyzse by each of those chunks.
 **Final chunk count:**
-
+Ultimately had 85 chunks in total accross the 10 .txt files
 ---
 
 ## Embedding Model
@@ -65,9 +65,11 @@ source# The Unofficial Guide — Project 1
      latency, and local vs. API-hosted. -->
 
 **Model used:**
-
+The model that was used was the "all-MiniLM-L6-v2" via sentence transformers. This model was chosen because it runs fully locally with no API key or rate limits which was great for this small project with just 85 chunks.
 **Production tradeoff reflection:**
-
+All-MiniLM-L6-v2 is good for local free use but its a small model trained on general text, not specifically on student slang or academic language, so it may be hard for the LLM to understand some of the "non-formal" reviews.
+OpenAI's text-embedding-3-large would give better accuracy but costs money per API call.
+Lastly, MiniLM is English only, this attribute may negatively impact results if reviews are written in other languages. 
 ---
 
 ## Grounded Generation
@@ -80,9 +82,9 @@ source# The Unofficial Guide — Project 1
      the mechanism. -->
 
 **System prompt grounding instruction:**
-
+The system prompt given to llama-3.3-70b-versatile reads:"Answer the question by analyzing and synthesizing ONLY the information provided in the context below. You may draw conclusions and make comparisons based on what the reviews say. If the context does not contain enough information to answer the question, respond with: 'I don't have enough information in my documents to answer that.' Do not use any knowledge from your training data. Every claim in your answer must be traceable to the provided context."
 **How source attribution is surfaced in the response:**
-
+Source attribution is handled programmatically in query.py — the unique source filenames are collected from the retrieved chunks before the LLM is called, and returned alongside the answer. This means attribution is guaranteed regardless of what the model says. The Gradio UI displays them in a separate "Retrieved from" output box.
 ---
 
 ## Evaluation Report
@@ -152,6 +154,7 @@ source# The Unofficial Guide — Project 1
 **Instance 1**
 
 - *What I gave the AI:*
+I gave it dihh
 - *What it produced:*
 - *What I changed or overrode:*
 
