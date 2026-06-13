@@ -125,13 +125,16 @@ The domain of this project are the student reviews of Hunter College Computer Sc
      results from an unrelated review" is an explanation. -->
 
 **Question that failed:**
-Which professor is the worst for CSCI 335?
+<p align= "left">Which professor is the worst for CSCI 335?</p>
+
 **What the system returned:**
-I don't have enough information in my documents to answer that. 
+<p align= "left">I don't have enough information in my documents to answer that. </p>
+
 **Root cause (tied to a specific pipeline stage):**
-The root cause is most likely the naming of the courses. For example if you ask about 335, it only shows relevance to Professors Tojeira, Stamos, Maryash. However, the answer if Professor Dietrich who teaches this same course but may be labeled as Software Analysis and Design 3. 
+<p align= "left">The root cause is most likely the naming of the courses. For example if you ask about 335, it only shows relevance to Professors Tojeira, Stamos, Maryash. However, the answer if Professor Dietrich who teaches this same course but may be labeled as Software Analysis and Design 3.</p>
+
 **What you would change to fix it:**
-Maybe I can set CSCI 335 and "Software Analysis and Design 3" to be the same thing so that it includes all relevant professors.
+<p align= "left">Maybe I can set CSCI 335 and "Software Analysis and Design 3" to be the same thing so that it includes all relevant professors.</p>
 ---
 
 ## Spec Reflection
