@@ -70,10 +70,10 @@ The domain of this project are the student reviews of Hunter College Computer Sc
      latency, and local vs. API-hosted. -->
 
 **Model used:**
-<p align = "center">The model that was used was the "all-MiniLM-L6-v2" via sentence transformers. This model was chosen because it runs fully locally with no API key or rate limits which was great for this small project with just 85 chunks.</p>
+<p align = "left">The model that was used was the "all-MiniLM-L6-v2" via sentence transformers. This model was chosen because it runs fully locally with no API key or rate limits which was great for this small project with just 85 chunks.</p>
 
 **Production tradeoff reflection:**
-<p align="center">All-MiniLM-L6-v2 is good for local free use but its a small model trained on general text, not specifically on student slang or academic language, so it may be hard for the LLM to understand some of the "non-formal" reviews. OpenAI's text-embedding-3-large would give better accuracy but costs money per API call. dLastly, MiniLM is English only, this attribute may negatively impact results if reviews are written in other languages. </p>
+<p align="left">All-MiniLM-L6-v2 is good for local free use but its a small model trained on general text, not specifically on student slang or academic language, so it may be hard for the LLM to understand some of the "non-formal" reviews. OpenAI's text-embedding-3-large would give better accuracy but costs money per API call. dLastly, MiniLM is English only, this attribute may negatively impact results if reviews are written in other languages. </p>
 ---
 
 ## Grounded Generation
@@ -140,10 +140,10 @@ Maybe I can set CSCI 335 and "Software Analysis and Design 3" to be the same thi
      Answer both questions with at least 2–3 sentences each. -->
 
 **One way the spec helped you during implementation:**
-<p align= "center"> In my opinion I think the biggest helper was the chunking strategy section in the planning.md which let claude process the implementation of ingest.py more smooth." I think also letting it know what questions may be present in the future, sort of eliminated any possible errors, it was kind of tailored. Overall, it helped in eliminating any type of guesswork.</p>
+<p align= "left"> In my opinion I think the biggest helper was the chunking strategy section in the planning.md which let claude process the implementation of ingest.py more smooth." I think also letting it know what questions may be present in the future, sort of eliminated any possible errors, it was kind of tailored. Overall, it helped in eliminating any type of guesswork.</p>
 
 **One way your implementation diverged from the spec, and why:**
-<p align="center">An issue that was faced came when the system couldn't associate reviews to professors because the professor's name was not present in each chunk after the separators.</p>
+<p align="left">An issue that was faced came when the system couldn't associate reviews to professors because the professor's name was not present in each chunk after the separators.</p>
 ---
 
 ## AI Usage
