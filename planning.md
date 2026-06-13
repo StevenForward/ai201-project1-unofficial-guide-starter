@@ -42,11 +42,13 @@ My domain was the Hunter College CS Professor Reviews. This knowledge is valuabl
      A review-heavy corpus warrants different chunking than a long FAQ. -->
 
 **Chunk size:**
-One review per chunk (it splits on --- separator), roughly 50-200 characters each
+<p>One review per chunk (it splits on --- separator), roughly 50-200 characters each</p>
+
 **Overlap:**
-No overlap
+<p>No overlap</p>
+
 **Reasoning:**
-Reviews are short and independent. Each one expresses a complete opinion. Splitting mid-review would lose context.
+<p>Reviews are short and independent. Each one expresses a complete opinion. Splitting mid-review would lose context.</p>
 ---
 
 ## Retrieval Approach
@@ -59,8 +61,10 @@ Reviews are short and independent. Each one expresses a complete opinion. Splitt
 
 **Embedding model:**
 all-MiniLM-L6-v2 via sentence-transformers
+
 **Top-k:**
 5; with short reviews as chunks, retrieving 5 gives the LLM enough opinions to create an answer.
+
 **Production tradeoff reflection:**
 All-MiniLM-L6-v2 is good for local free use but its a small model trained on general text, not specifically on student slang or academic language, so it may be hard for the LLM to understand some of the "non-formal" reviews.
 OpenAI's text-embedding-3-large would give better accuracy but costs money per API call.
@@ -91,9 +95,9 @@ Lastly, MiniLM is English only, this attribute may negatively impact results if 
      retrieval, chunks that split key information across boundaries. -->
 
 1.
-One of the anticipated challenges would have to be the contradicting reviews for the professors. It can be hard for my system to come up with a clear answer when there are the same amount of good reviews as bad for a professor. 
+<p>One of the anticipated challenges would have to be the contradicting reviews for the professors. It can be hard for my system to come up with a clear answer when there are the same amount of good reviews as bad for a professor.</p>
 2.
-Another challenge present is the fact that some of the reviews in RateMyProfessor can be too short or "informal" meaning they use slang vocabulary in the review. This can present a challenge for the LLM to understand or even create a significant conclusion.
+<p>Another challenge present is the fact that some of the reviews in RateMyProfessor can be too short or "informal" meaning they use slang vocabulary in the review. This can present a challenge for the LLM to understand or even create a significant conclusion.</p>
 ---
 
 ## Architecture
@@ -135,8 +139,7 @@ I will give Claude my Domain section, Documents table, and Chunking Strategy sec
 I'll give Claude the Retrieval Appraoch section and Architecture diagram and ask it to implement,an embedding script using all-MiniLM-L6-v2 via sentence-transformers that stores chunks in ChromaDB with source metadata, and a retrieval function that accepts a query string and returns the top-5 most relevant chunks with their source filenames. I will verify by running 3 of my evaluation plan questions and checking that returned chunks are visibly relevant.
 
 **Milestone 5 — Generation and interface:**
-I will give Claude my grounding requirement (answer only from retrieved context, 
-include source attribution) and ask it to implement a Groq API call using 
+I will give Claude my grounding requirement and ask it to implement a Groq API call using 
 llama-3.3-70b-versatile with a system prompt that enforces grounding, and a 
 Gradio UI with a text input and two output fields for the answer and sources. 
 I will verify by testing an out-of-scope question and confirming the system 

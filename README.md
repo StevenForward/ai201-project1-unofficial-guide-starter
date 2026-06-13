@@ -70,11 +70,10 @@ The domain of this project are the student reviews of Hunter College Computer Sc
      latency, and local vs. API-hosted. -->
 
 **Model used:**
-The model that was used was the "all-MiniLM-L6-v2" via sentence transformers. This model was chosen because it runs fully locally with no API key or rate limits which was great for this small project with just 85 chunks.
+<p align = "center">The model that was used was the "all-MiniLM-L6-v2" via sentence transformers. This model was chosen because it runs fully locally with no API key or rate limits which was great for this small project with just 85 chunks.</p>
+
 **Production tradeoff reflection:**
-All-MiniLM-L6-v2 is good for local free use but its a small model trained on general text, not specifically on student slang or academic language, so it may be hard for the LLM to understand some of the "non-formal" reviews.
-OpenAI's text-embedding-3-large would give better accuracy but costs money per API call.
-Lastly, MiniLM is English only, this attribute may negatively impact results if reviews are written in other languages. 
+<p align="center">All-MiniLM-L6-v2 is good for local free use but its a small model trained on general text, not specifically on student slang or academic language, so it may be hard for the LLM to understand some of the "non-formal" reviews. OpenAI's text-embedding-3-large would give better accuracy but costs money per API call. dLastly, MiniLM is English only, this attribute may negatively impact results if reviews are written in other languages. </p>
 ---
 
 ## Grounded Generation
@@ -87,9 +86,10 @@ Lastly, MiniLM is English only, this attribute may negatively impact results if 
      the mechanism. -->
 
 **System prompt grounding instruction:**
-The system prompt given to llama-3.3-70b-versatile reads:"Answer the question by analyzing and synthesizing ONLY the information provided in the context below. You may draw conclusions and make comparisons based on what the reviews say. If the context does not contain enough information to answer the question, respond with: 'I don't have enough information in my documents to answer that.' Do not use any knowledge from your training data. Every claim in your answer must be traceable to the provided context."
+<p>The system prompt given to llama-3.3-70b-versatile reads:"Answer the question by analyzing and synthesizing ONLY the information provided in the context below. You may draw conclusions and make comparisons based on what the reviews say. If the context does not contain enough information to answer the question, respond with: 'I don't have enough information in my documents to answer that.' Do not use any knowledge from your training data. Every claim in your answer must be traceable to the provided context."</p>
+
 **How source attribution is surfaced in the response:**
-Source attribution is handled programmatically in query.py — the unique source filenames are collected from the retrieved chunks before the LLM is called, and returned alongside the answer. This means attribution is guaranteed regardless of what the model says. The Gradio UI displays them in a separate "Retrieved from" output box.
+<p>Source attribution is handled programmatically in query.py — the unique source filenames are collected from the retrieved chunks before the LLM is called, and returned alongside the answer. This means attribution is guaranteed regardless of what the model says. The Gradio UI displays them in a separate "Retrieved from" output box.</p>
 ---
 
 ## Evaluation Report
@@ -100,11 +100,11 @@ Source attribution is handled programmatically in query.py — the unique source
 
 | # | Question | Expected answer | System response (summarized) | Retrieval quality | Response accuracy |
 |---|----------|-----------------|------------------------------|-------------------|-------------------|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
+| 1 |Which CS professor is the best for discrete math?|Saad Mneimneh|Relevant|Accurate|
+| 2 |Which CS professor is the best for CSCI 335?|Ioannis Stamos|Ionannis Stamos|Relevant|Accurate|
+| 3 |Which professors are the hardest to reach out to?|Justin Tojeira |Justin Tojeira|Relevant|Partially-Accurate|
+| 4 |Who is better for Computer Architecture 2, Shankar or Shostak?|Professor Shostak|Professor Shostak is better for computer architecure|Relevant|Accurate|
+| 5 |Which professor is the worst for CSCI 335?|Professor Dietrich|Not enough information is available|Off-target|Inaccurate|
 
 **Retrieval quality:** Relevant / Partially relevant / Off-target  
 **Response accuracy:** Accurate / Partially accurate / Inaccurate
@@ -125,13 +125,13 @@ Source attribution is handled programmatically in query.py — the unique source
      results from an unrelated review" is an explanation. -->
 
 **Question that failed:**
-
+Which professor is the worst for CSCI 335?
 **What the system returned:**
-
+I don't have enough information in my documents to answer that. 
 **Root cause (tied to a specific pipeline stage):**
-
+The root cause is most likely the naming of the courses. For example if you ask about 335, it only shows relevance to Professors Tojeira, Stamos, Maryash. However, the answer if Professor Dietrich who teaches this same course but may be labeled as Software Analysis and Design 3. 
 **What you would change to fix it:**
-
+Maybe I can set CSCI 335 and "Software Analysis and Design 3" to be the same thing so that it includes all relevant professors.
 ---
 
 ## Spec Reflection
@@ -140,9 +140,10 @@ Source attribution is handled programmatically in query.py — the unique source
      Answer both questions with at least 2–3 sentences each. -->
 
 **One way the spec helped you during implementation:**
+<p align= "center"> In my opinion I think the biggest helper was the chunking strategy section in the planning.md which let claude process the implementation of ingest.py more smooth." I think also letting it know what questions may be present in the future, sort of eliminated any possible errors, it was kind of tailored. Overall, it helped in eliminating any type of guesswork.</p>
 
 **One way your implementation diverged from the spec, and why:**
-
+<p align="center">An issue that was faced came when the system couldn't associate reviews to professors because the professor's name was not present in each chunk after the separators.</p>
 ---
 
 ## AI Usage
@@ -158,13 +159,12 @@ Source attribution is handled programmatically in query.py — the unique source
 
 **Instance 1**
 
-- *What I gave the AI:*
-I gave it dihh
-- *What it produced:*
-- *What I changed or overrode:*
+- *What I gave the AI:* I gave it my domain section, documents table, chunking strategy section, and a pipeline diagram from planning.md and asked Claude to implement a script that loads all .txt files from the documents folder, to split on --- separator, and to return chunks with sources as metadata
+- *What it produced:* It produced a load_and_chunk_documents function that read all files, split on the given separator and eliminated whitespace.
+- *What I changed or overrode:* I directed Claude to modify the chunking function to extract the professor name and course from each file's header and prepend it to every review chunk. This was not in the original spec but was necessary because the embedding model could not connect review text to a specific professor or course without that context.
 
 **Instance 2**
 
-- *What I gave the AI:*
-- *What it produced:*
-- *What I changed or overrode:*
+- *What I gave the AI:* My Retrieval Approach section and pipeline diagram from planning.md, and asked Claude to implement an embedding script using all-MiniLM-L6-v2 that stores chunks in ChromaDB with source metadata, and a retrieval function that returns the top-5 most relevant chunks.
+- *What it produced:* embed.py with a build_vector_store() function, a get_collection() function, and a retrieve() function that queries ChromaDB and returns chunks with source and distance scores.
+- *What I changed or overrode:* The initial version reloaded the SentenceTransformer model on every call to retrieve(), which would have been slow in the Gradio app. I directed Claude to move the model to module level so it loads once at import time and is reused across all queries.
